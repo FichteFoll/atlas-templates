@@ -1,0 +1,18 @@
+{
+	"folders":
+	[
+		{
+			"path": "/E/Development/_Web/Atlas"
+		}
+	],
+    "build_systems":
+    [
+        {
+            "name": "Run Templater",
+            "cmd": ["py", "template.py"],
+            "file_regex": "^\\s*File \"(.*?)\", line \\d+",
+            "working_dir": "${project_path:${folder}}",
+            "selector": "*"
+        }
+    ]
+}

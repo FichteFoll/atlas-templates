@@ -1,0 +1,104 @@
+.table {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: table; }
+  .table:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.rcol, .col {
+  display: table-cell; }
+
+.col {
+  padding-right: 20px; }
+  .col:last-of-type {
+    padding-right: 0px; }
+
+.table-pad {
+  padding: 20px 0 0px 20px; }
+  .table-pad > .col:last-of-type {
+    padding-right: 20px; }
+
+body {
+  height: 100%;
+  background: #b3b3b3 url("img/pattern_trans.png") repeat;
+  padding: 30px; }
+
+p {
+  text-align: justify; }
+
+.overview {
+  border-radius: 10px;
+  width: 40%; }
+
+.items {
+  width: 20%; }
+
+.other {
+  width: 40%; }
+
+.definition:after {
+  content: ": "; }
+
+.huge-text, .mid-riff .inner-container .content .damage-details span {
+  font-size: 80%;
+  text-transform: uppercase; }
+
+.header .header-bg {
+  background-image: linear-gradient(top, #242424 0%, black 100%);
+  background-image: -o-linear-gradient(top, #242424 0%, black 100%);
+  background-image: -moz-linear-gradient(top, #242424 0%, black 100%);
+  background-image: -webkit-linear-gradient(top, #242424 0%, black 100%);
+  background-image: -ms-linear-gradient(top, #242424 0%, black 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #242424), color-stop(1, black));
+  border-top-left-radius: 1.5em;
+  -moz-border-radius-topleft: 1.5em;
+  -webkit-border-top-left-radius: 1.5em;
+  border-top-right-radius: 1.5em;
+  -moz-border-radius-topright: 1.5em;
+  -webkit-border-top-right-radius: 1.5em;
+  vertical-align: middle; }
+  .header .header-bg .header-pic {
+    width: 200px;
+    float: right; }
+  .header .header-bg .title-container {
+    vertical-align: middle;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    color: #f8f8f8; }
+    .header .header-bg .title-container .sub-title:before {
+      content: '"'; }
+    .header .header-bg .title-container .sub-title:after {
+      content: '"'; }
+
+.mid-riff .outer-container {
+  padding: 0 1.5em;
+  background: #1cada4 url("img/pattern_trans.png") repeat;
+  box-shadow: inset 0 0 1.2em rgba(0, 0, 0, 0.4); }
+.mid-riff .inner-container {
+  padding: 0 1.5em;
+  background: rgba(102, 102, 102, 0.6);
+  box-shadow: inset 0 0 0.2em rgba(0, 0, 0, 0.3); }
+  .mid-riff .inner-container .content {
+    background-image: linear-gradient(top, white 0%, #dbdbdb 100%);
+    background-image: -o-linear-gradient(top, white 0%, #dbdbdb 100%);
+    background-image: -moz-linear-gradient(top, white 0%, #dbdbdb 100%);
+    background-image: -webkit-linear-gradient(top, white 0%, #dbdbdb 100%);
+    background-image: -ms-linear-gradient(top, white 0%, #dbdbdb 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(1, #dbdbdb));
+    padding: 1em; }
+    .mid-riff .inner-container .content p {
+      text-indent: 1.5em; }
+    .mid-riff .inner-container .content .damage-details .rcol {
+      min-width: 10em;
+      text-align: center; }
+      .mid-riff .inner-container .content .damage-details .rcol:first-of-type {
+        text-align: left; }
+      .mid-riff .inner-container .content .damage-details .rcol:last-of-type {
+        text-align: right; }
+    .mid-riff .inner-container .content .damage-details .range-num {
+      color: #a51300; }

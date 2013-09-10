@@ -1,0 +1,83 @@
+def block(s, _locals):
+  return " ".join(s.splitlines())
+
+block_ = lambda s, _l: " ".join(s.splitlines())
+
+%html
+  %head
+    :css ./
+      style.css
+
+  %body[style="min-width: {layout[min_width]}"]
+    .card
+      .info.table
+        .col.overview
+          .header
+            .header-bg.table
+              .rcol.title-container
+                .title
+                  %span Ryze
+                .sub-title
+                  %span The Rogue Mage
+              .rcol.header-pic
+                %img[src="http://fakeimg.pl/200x100/?text=Champion"]
+
+          .mid-riff
+            .outer-container
+              .inner-container
+                .content
+                  :block_ %p
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  .damage-details.table
+                    .rcol.damage
+                      %span.definition Damage Output
+                      %span high
+                    .rcol.damage-type
+                      %span.definition Damage Type
+                      %span magic
+                    .rcol.range
+                      %span.definition Range
+                      %span.range-num 550&nbsp;
+                      %span.range-type ranged
+
+          .slider-container
+            .TODO
+
+          .bot-riff
+            .TODO
+
+
+        .col.items
+          .items-container
+            .items-header
+              .items-title
+              .items-pic
+            .item-list
+              %hr
+              .for-each-item
+              .item
+                .item-icon
+                %img
+                  .item-type
+                .item-desc
+              %hr
+
+
+        .col.other
+          .counters
+          .more-other
+            .abilities-container
+            .tips-container
+
+      .credits

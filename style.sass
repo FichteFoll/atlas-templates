@@ -1,0 +1,154 @@
+// variables
+
+$box-padding: 1.5em
+$outer-radius: $box-padding
+
+// mixins
+
+@mixin linear-gradient($origin, $col1, $col2, $bgcol: '')
+  background-image: linear-gradient($origin, $col1 0%, $col2 100%)
+  background-image: -o-linear-gradient($origin, $col1 0%, $col2 100%)
+  background-image: -moz-linear-gradient($origin, $col1 0%, $col2 100%)
+  background-image: -webkit-linear-gradient($origin, $col1 0%, $col2 100%)
+  background-image: -ms-linear-gradient($origin, $col1 0%, $col2 100%)
+
+  // do I need this?
+  background-image: -webkit-gradient(linear, left $origin, left bottom, color-stop(0, $col1), color-stop(1, $col2) )
+
+@mixin rounded-edge($vert, $horz, $radius: $outer-radius)
+  border-#{$vert}-#{$horz}-radius: $radius
+  -moz-border-radius-#{$vert}#{$horz}: $radius
+  -webkit-border-#{$vert}-#{$horz}-radius: $radius
+
+@mixin rounded-side($vert, $radius: $outer-radius)
+  @include rounded-edge($vert, left, $radius)
+  @include rounded-edge($vert, right, $radius)
+
+@mixin rounded($radius: $outer-radius)
+  border-radius: $radius
+  -moz-border-radius: $radius
+  -webkit-border-radius: $radius
+
+////
+// https://github.com/ThisIsDallas/Simple-Grid/blob/master/simplegrid.css
+
+.table
+  width: 100%
+  margin: 0 auto
+  overflow: hidden
+  display: table
+
+  &:after
+    content: ""
+    display: table
+    clear: both
+
+.rcol, .col  // .rcol is without padding
+  display: table-cell
+
+.col
+  padding-right: 20px
+
+  &:last-of-type
+    padding-right: 0px
+
+.table-pad
+  padding: 20px 0 0px 20px
+
+  & > .col:last-of-type
+    padding-right: 20px
+
+
+// general layout
+
+body
+  height: 100%
+  background: #B3B3B3 url("img/pattern_trans.png") repeat
+  padding: 30px
+
+p
+  text-align: justify
+
+.overview
+  border-radius: 10px
+  width: 40%
+
+.items
+  width: 20%
+
+.other
+  width: 40%
+
+.definition:after
+  content: ": "
+
+.huge-text
+  font-size: 80%
+  text-transform: uppercase
+
+// HEADER
+
+.header
+  .header-bg
+    @include linear-gradient(top, #242424, #000000)
+    @include rounded-side(top)
+    vertical-align: middle
+
+    .header-pic
+      width: 200px
+      float: right
+
+    .title-container
+      vertical-align: middle
+      width: 100%
+
+      text-transform: uppercase
+      // font:
+      font-weight: bold
+      text-align: center
+      color: #f8f8f8
+
+      .sub-title
+        &:before
+          content: "\""
+
+        &:after
+          content: "\""
+
+// MID-RIFF
+
+.mid-riff
+  .outer-container
+    padding: 0 $box-padding
+    background: rgba(28, 173, 164, 1) url("img/pattern_trans.png") repeat
+    // background: rgba(28, 173, 164, 0.7) // #1cada4 TODO: smaller pattern
+    box-shadow: inset 0 0 1.2em hsla(0, 0%, 0%, 0.4)
+
+  .inner-container
+    padding: 0 $box-padding
+    background: hsla(0, 0%, 40%, 0.6) // #979797
+    box-shadow: inset 0 0 0.2em hsla(0, 0%, 0%, 0.3)
+
+    .content
+      @include linear-gradient(top, hsl(0, 0%, 100%), hsl(0, 0%, 86%))
+      padding: 1em
+
+      p
+        text-indent: 1.5em
+
+      .damage-details
+        .rcol
+          min-width: 10em
+          text-align: center
+
+          &:first-of-type
+            text-align: left
+
+          &:last-of-type
+            text-align: right
+
+        span
+          @extend .huge-text
+
+        .range-num
+          color: #A51300
